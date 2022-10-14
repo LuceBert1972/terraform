@@ -1,11 +1,11 @@
 terraform {
   required_version = ">=1.2.3"
   backend "s3" {
-    bucket         = "zlrx-terraform-state"
+    bucket         = "gbg-terraform-state"
     key            = "terraform.tfstate"
-    region         = "eu-central-1"
+    region         = "eu-west-1"
     encrypt        = true
-    dynamodb_table = "zlrx-terraform-state-lock"
+    dynamodb_table = "gbg-terraform-state-lock"
   }
   required_providers {
     aws = {

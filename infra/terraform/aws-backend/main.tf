@@ -35,8 +35,8 @@ resource "aws_s3_bucket_public_access_block" "this" {
 
 resource "aws_dynamodb_table" "gbg-terraform-state-lock" {
   name           = "gbg-terraform-state-lock"
-  read_capacity  = 20
-  write_capacity = 10
+  read_capacity  = 5
+  write_capacity = 5
   hash_key       = "LockID"
 
   attribute {
