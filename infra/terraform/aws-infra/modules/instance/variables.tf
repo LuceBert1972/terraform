@@ -30,6 +30,10 @@ variable "vpc" {
   type = any
 }
 
+variable "region" {
+  type = string
+}
+
 variable "db_config" {
   type = object( {
     user     = string

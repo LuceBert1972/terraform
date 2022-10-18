@@ -80,6 +80,13 @@ resource "aws_launch_template" "server" {
   key_name               = aws_key_pair.ssh.key_name
   user_data              = data.cloudinit_config.httpserver.rendered
   vpc_security_group_ids = [aws_security_group.instance.id]
+  block_device_mappings {
+    device_name = "/dev/sda1"
+      ebs {
+      volume_size = 20
+    }
+  }
+  
 }
 
 resource "aws_autoscaling_group" "server" {
